@@ -1,0 +1,14 @@
+export const APP_LOADING = 'APP_LOADING'
+export const APP_TITLE = 'APP_TITLE'
+export const APP_DIRECTION = 'APP_DIRECTION'
+export const APP_LOCATION_LOADING = 'APP_LOCATION_LOADING'
+
+// tabbar
+export const PLATFORM_TABBAR = 'PLATFORM_TABBAR'
+export const BUSINESS_TABBAR = 'BUSINESS_TABBAR'
+export const SHOPS_TABBAR = 'SHOPS_TABBAR'
+export const DELIVERY_TABBAR = 'DELIVERY_TABBAR'
+export const COMMON_TABBAR = 'COMMON_TABBAR'
+
+// message
+export const UNREAD_COUNT = 'UNREAD_COUNT'

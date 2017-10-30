@@ -1,0 +1,7 @@
+export const CITY = "CITY";
+export const BUSINESSA_AREA = "BUSINESSA_AREA";
+export const CURRENT_CATEGORY = "CURRENT_CATEGORY";
+export const CURRENT_BRAND = "CURRENT_BRAND";
+export const CUSTOMER_OR_FACTORY_INFO = "CUSTOMER_OR_FACTORY_INFO";
+export const CART_INFO = "CART_INFO";
+export const CREATE_ORDER = "CREATE_ORDER";

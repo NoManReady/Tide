@@ -1,0 +1,5 @@
+app $bus名称对应关系
+
+$$userLogout:登出
+$$resetTabIndex:重置当前tabIndex
+$$goManageSysCheck:管理进入判断

@@ -1,0 +1,45 @@
+.vux-pop-out-enter-active,
+.vux-pop-out-leave-active,
+.vux-pop-in-enter-active,
+.vux-pop-in-leave-active {
+    will-change: transform;
+    transition: all .3s;
+    top: 0;
+    width: 100%;
+    position: absolute;
+    transform: translate3d(0, 0, 0); 
+    backface-visibility: hidden;
+    perspective: 1000;
+}
+
+.vux-pop-out-enter {
+    opacity: 0;
+    transform: translate3d(-100%, 0, 0);
+}
+
+.vux-pop-out-leave-active {
+    opacity: 0;
+    transform: translate3d(100%, 0, 0);
+}
+
+.vux-pop-in-enter {
+    opacity: 0;
+    transform: translate3d(100%, 0, 0);
+}
+
+.vux-pop-in-leave-active {
+    opacity: 0;
+    transform: translate3d(-100%, 0, 0);
+}
+
+.fade-enter,
+.fade-leave-active{
+    background-color: rgba(0,0,0,0);
+    transition: background-color .2s ease-in-out;
+}
+
+.slide-in-enter,
+.fade-leave-active{
+    transform: translate3d(100%, 0, 0);
+    transition: transform .3s ease-in-out;
+}

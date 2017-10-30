@@ -1,0 +1,130 @@
+html {
+    -webkit-tap-highlight-color: transparent;
+    overflow-x: hidden;
+    background-color: #f6f6f6
+}
+
+body {
+    color: #333;
+    font-size: 14px;
+    line-height: 1.5;
+    font-family: Microsoft Yahei, arial
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+hr,
+p,
+blockquote,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+pre,
+form,
+fieldset,
+legend,
+button,
+input,
+textarea,
+th,
+td {
+    margin: 0;
+    padding: 0
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0
+}
+
+img {
+    vertical-align: middle;
+    border: 0
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: normal
+}
+
+ul,
+ol,
+li {
+    list-style: none
+}
+
+em,
+i {
+    font-style: normal
+}
+
+img {
+    border: none
+}
+
+input,
+img {
+    vertical-align: middle
+}
+
+input,
+// input:not([type="date"]),
+// input:not([type="checkbox"]),
+select,
+textarea {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    -webkit-appearance: none;
+    border: 0;
+    border-radius: 0
+}
+
+textarea:focus {
+    outline: 0
+}
+
+a {
+    color: #666;
+    text-decoration: none;
+    outline: 0
+}
+
+a:active,
+a:hover,
+a.current {
+    outline: 0
+}
+
+input,
+button,
+select,
+textarea {
+    font-family: inherit;
+    font-size: inherit;
+    line-height: 1;
+    letter-spacing: normal;
+    word-spacing: normal;
+    text-transform: none;
+    text-indent: 0;
+    text-shadow: none;
+    vertical-align: middle
+}
+
+button,
+html input[type=button],
+input[type=reset],
+input[type=submit] {
+    -webkit-appearance: button;
+    cursor: pointer
+}

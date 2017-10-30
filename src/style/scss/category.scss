@@ -1,0 +1,98 @@
+.category-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    .category-left {
+        background-color: #f8f8f8;
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        width: 24%;
+        height: 100%;
+        overflow: scroll;
+        -webkit-overflow-scrolling: touch;
+        z-index: 2;
+        border-right: 1px solid #e5e5e5;
+        ul {}
+        li {
+            position: relative;
+            &.level-two.active{
+                .level-one{
+                    &.active{
+                        &>a{
+                            color: $theme;
+                        }
+                    }
+                    &:after{
+                        left:10px;
+                    }
+                    &>a {
+                        color: #333;
+                        background-color: #fff;
+                        border:none;
+                        height: auto;
+                        &:before {
+                            border-width: 0;
+                        }
+                    }
+                }
+            }
+            &.level-two,&.level-one {
+                font-size: 14px;
+                text-align: center;
+                overflow: hidden;
+                height: 50px;
+                a {
+                    position: relative;
+                    line-height: 50px;
+                    display: block;
+                    padding: 0 15.5%;
+                }
+                @include border-1px(#e5e5e5, after, bottom);
+                text-overflow: ellipsis;
+                white-space: nowrap;
+                overflow: hidden;
+                &.active {
+                    height:auto;
+                      &>a {
+                          background-color: #fff;
+                          @include border-1px($theme, before, left);
+                          height: auto;
+                          &:before {
+                              border-width: 3px;
+                          }
+                      }
+                  }
+            }
+        }
+    }
+    .category-right {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        width: 76%;
+        overflow: scroll;
+        -webkit-overflow-scrolling: touch;
+        .category-right-content {
+            @include flex-wrap(wrap);
+            margin-top: 15px;
+            padding-left: 7.01%;
+            padding-right: 7.01%;
+            .category-item {
+                position: relative;
+                width: 30%;
+                margin-right: 3%;
+                margin-bottom: 10px;
+                /*border:1px solid #e5e5e5;*/
+                background-color: #e5e5e5;
+                border-radius: 3px;
+                height: 40px;
+                line-height: 40px;
+                /*padding: 0 10px;*/
+                text-align: center
+            }
+        }
+    }
+}

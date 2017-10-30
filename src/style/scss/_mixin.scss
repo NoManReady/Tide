@@ -1,0 +1,272 @@
+@mixin css3-prefix($property, $value) {
+    -webkit-#{$property}: #{$value};
+    #{$property}: #{$value};
+}
+
+@mixin border-1px($color, $type:after, $direction:top) {
+    @if $type==after {
+        &:after {
+            display: block;
+            position: absolute;
+            content: " ";
+            @if $direction==bottom {
+                left: 0;
+                bottom: 0;
+                width: 100%;
+                height: 1px;
+                border-bottom: 1px solid $color;
+            }
+            @else if $direction==right {
+                top: 0;
+                right: 0;
+                height: 100%;
+                width: 1px;
+                border-right: 1px solid $color;
+            }
+        }
+    }
+    @if $type==before {
+        &:before {
+            display: block;
+            position: absolute;
+            content: " ";
+            @if $direction==top {
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 1px;
+                border-top: 1px solid $color;
+            }
+            @else if $direction==left {
+                top: 0;
+                left: 0;
+                height: 100%;
+                width: 1px;
+                border-left: 1px solid $color;
+            }
+        }
+    }
+}
+
+@mixin border-none() {
+    &:after,
+    &:before {
+        display: none;
+    }
+}
+
+@mixin bg-image($url) {
+    background-image: url($url + '@2x.png');
+    @media (-webkit-min-device-pixel-ratio: 3), (min-device-pixel-ratio: 3) {
+        background-image: url($url + '@3x.png');
+    }
+}
+
+@mixin box-shadow($x: 2px, $y: 2px, $blur: 5px, $color: rgba(0, 0, 0, .4), $inset: "") {
+    @if ($inset !="") {
+        @include css3-prefix('box-shadow', $inset $x $y $blur $color);
+    }
+    @else {
+        @include css3-prefix('box-shadow', $x $y $blur $color);
+    }
+}
+
+@mixin border-radius($radius: 5px) {
+    @include css3-prefix('border-radius', $radius);
+}
+
+@mixin box-sizing($type: border-box) {
+    @include css3-prefix('box-sizing', $type);
+}
+
+@mixin transform($params) {
+    @include css3-prefix('transform', $params);
+}
+
+@mixin transition($properties...) {
+    @if length($properties)>=1 {
+        @include css3-prefix('transition', $properties);
+    }
+    @else {
+        @include css3-prefix('transition', "all 0.2s ease-in-out 0s");
+    }
+}
+
+@mixin keyframes($animation-name) {
+    @-webkit-keyframes #{$animation-name} {
+        @content;
+    }
+    @keyframes #{$animation-name} {
+        @content;
+    }
+}
+
+@mixin animation($str) {
+    @include css3-prefix('animation', $str);
+}
+
+//flexbox
+@mixin flexbox() {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex !important;
+}
+
+@mixin flex($values) {
+    -webkit-box-flex: $values;
+    -webkit-flex: $values;
+    flex: $values;
+}
+
+@mixin order($val) {
+    -webkit-box-ordinal-group: $val;
+    -webkit-order: $val;
+    order: $val;
+}
+
+//$fw : wrap / nowarp
+@mixin flex-wrap($fw) {
+    -webkit-flex-wrap: $fw;
+    flex-wrap: $fw;
+}
+
+//$fs:1
+@mixin flex-shrink($fs) {
+    -webkit-flex-shrink: $fs;
+    flex-shrink: $fs;
+}
+
+//$jc :  flex-start | flex-end | center | space-between | space-around;
+@mixin justify-content($jc) {
+    -webkit-box-pack: $jc;
+    -webkit-justify-content: $jc;
+    justify-content: $jc;
+}
+
+//$ai : flex-start | flex-end | center | baseline | stretch;
+@mixin align-items($ai) {
+    -webkit-box-align: $ai;
+    -webkit-align-items: $ai;
+    align-items: $ai;
+}
+
+//$ai : flex-start | flex-end | center | space-between | space-around | stretch;
+@mixin align-content($ai) {
+    -webkit-align-content: $ai;
+    align-content: $ai;
+}
+
+//$as : auto | flex-start | flex-end | center | baseline | stretch;
+@mixin align-self($as) {
+    -webkit-align-self: $as;
+    align-self: $as;
+}
+
+@mixin ell() {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+@mixin word-break {
+    word-break: break-all;
+    word-wrap: break-word;
+}
+
+@mixin dib() {
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+}
+
+// minheight
+@mixin minHeight($min-height) {
+    min-height: $min-height;
+    height: auto !important;
+    height: $min-height;
+}
+
+//箭头arrow(direction,size,color);
+@mixin arrow($direction, $size, $color) {
+    content: "";
+    width: 0;
+    height: 0;
+    line-height: 0;
+    font-size: 0;
+    overflow: hidden;
+    border-width: $size;
+    cursor: pointer;
+    @if $direction==top {
+        border-style: dashed dashed solid dashed;
+        border-color: transparent transparent $color transparent;
+        border-top: none;
+    }
+    @else if $direction==bottom {
+        border-style: solid dashed dashed dashed;
+        border-color: $color transparent transparent transparent;
+        border-bottom: none;
+    }
+    @else if $direction==right {
+        border-style: dashed dashed dashed solid;
+        border-color: transparent transparent transparent $color;
+        border-right: none;
+    }
+    @else if $direction==left {
+        border-style: dashed solid dashed dashed;
+        border-color: transparent $color transparent transparent;
+        border-left: none;
+    }
+}
+
+@mixin square($px) {
+    width: $px;
+    height: $px;
+}
+
+//height
+@mixin height($px) {
+    height: $px;
+    line-height: $px;
+}
+
+@mixin hidden ($extend:true) {
+    @if $extend {
+        @extend %hidden;
+    }
+    @else {
+        display: none !important;
+        visibility: hidden;
+    }
+}
+
+%hidden {
+    @include hidden(false);
+}
+
+@mixin scrollable() {
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+//居中
+@mixin center-block {
+    margin: 0 auto;
+}
+
+//border
+@mixin border-tb($width:1px, $color:$color-split) {
+    border-top: $width solid $color;
+    border-bottom: $width solid $color;
+}
+
+//省略行数
+@mixin line-clamp($line) {
+    -webkit-line-clamp: $line;
+    line-clamp: $line;
+}
+
+@function pxToRem($px) {
+    @return ($px / 3) * 0.02rem;
+}
+
+$theme-color:rgb(217, 75, 65);

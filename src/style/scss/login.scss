@@ -1,0 +1,68 @@
+.input-box {
+    position: relative;
+    .input {
+        color: #333;
+        width: 100%;
+        box-sizing: border-box;
+        letter-spacing: 1px;
+        border: 0;
+        padding: 4px 0;
+        border-bottom: 1px solid #333;
+        background-color: transparent;
+        position: relative;
+        z-index: 2;
+        font-size: 14px;
+        height: 32px;
+        color: $theme;
+        &:focus,
+        &.has-content {
+            &~.focus-border {
+                width: 100%;
+                transition: 0.4s;
+                left: 0;
+            }
+            &~label {
+                top: -20px;
+                font-size: 14px;
+                transition: 0.3s;
+            }
+        }
+        &~label {
+            position: absolute;
+            left: 0;
+            width: 100%;
+            top: 0;
+            color: #333;
+            transition: 0.3s;
+            letter-spacing: 0.5px;
+            z-index: 1;
+            font-size: 16px;
+        }
+        &~.focus-border {
+            position: absolute;
+            bottom: -1px;
+            z-index: 2;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background-color: $theme;
+            transition: 0.4s;
+        }
+    }
+}
+
+.login-btn {
+    .weui-cells{
+        background: none;
+        &:after,&:before{
+            content: inherit;
+            width: 0;
+            height: 0;
+            border:none;
+        }
+    }
+    .weui-btn {
+        border-radius: 21px;
+        
+    }
+}

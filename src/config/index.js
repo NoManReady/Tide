@@ -1,13 +1,9 @@
-const config={
-  development: {
-    api: 'http://localhost:8080/api',
-    img: 'http://localhost:8080/img'
-  },
-  production: {
-    api: 'http://localhost:8080/api',
-    img: 'http://localhost:8080/img'
-  }
+const config = {
+    development: {
+        api: 'http://localhost:8080/api'
+    },
+    production: {
+        api: 'http://open.xiahe.me'
+    }
 }
-export default {
-  api:config[process.env['NODE_ENV']]
-}
+export default config[process.env['NODE_ENV']]
