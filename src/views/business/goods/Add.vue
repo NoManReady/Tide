@@ -1,22 +1,9 @@
 <template>
     <div class="business-goods-add gc-container has-header gc-form">
         <x-header :left-options="{backText: '',preventGoBack:true}" class="gc-header" @on-click-back="toGoodsList">{{title}}</x-header>
-        <group>
-
-            <!--<cell is-link>
-                                                                                                                                                                                                                <span slot="title">分类</span>
-                                                                                                                                                                                                                <div slot="value" @click.prevent.stop="cateVisible=true">
-                                                                                                                                                                                                                    <input type="text" class="weui-input fc-3 tr" v-model="cateValue" placeholder="请选择分类" v-verify="gcForm.cate_id" disabled>
-                                                                                                                                                                                                                </div>
-                                                                                                                                                                                                            </cell>-->
+        <group>                                                                                                                                                                                   </cell>-->
             <x-input title="分类" text-align="right" v-model="cateValue" placeholder="请选择分类" v-verify="gcForm.cate_id" @on-focus="cateVisible=true" :show-clear="false"></x-input>
-            <x-input title="品牌" text-align="right" v-model="gcForm.brand_name" placeholder="请选择品牌" v-verify="gcForm.brand_name" @on-focus="brandVisible=true" :show-clear="false"></x-input>
-            <!--<cell is-link>
-                                                                                                                                                                                                                <span slot="title">品牌</span>
-                                                                                                                                                                                                                <div slot="value" @click.prevent.stop="brandVisible=true">
-                                                                                                                                                                                                                    <input type="text" class="weui-input fc-3 tr" v-model="gcForm.brand_name" placeholder="请选择品牌" v-verify="gcForm.brand_name" disabled>
-                                                                                                                                                                                                                </div>
-                                                                                                                                                                                                            </cell>-->
+            <x-input title="品牌" text-align="right" v-model="gcForm.brand_name" placeholder="请选择品牌" v-verify="gcForm.brand_name" @on-focus="brandVisible=true" :show-clear="false"></x-input>                                                                                                                                                                                       </cell>-->
             <x-input title="名称" text-align="right" v-model="gcForm.title" placeholder="请填写商品名称" v-verify="gcForm.title"></x-input>
             <x-input title="货号" text-align="right" v-model="gcForm.code" placeholder="请填写商品货号" v-verify="gcForm.code"></x-input>
         </group>
